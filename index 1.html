@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <nav class="justify-content-between navbar navbar-expand navbar-light">
+      <span class="navbar-brand">GraphQL Tutorial App</span>
+      <div class="justify-content-end navbar-collapse collapse">
+        <button
+          id="qsLogoutBtn"
+          type="button"
+          class="btn-margin logoutBtn btn btn-primary"
+          onclick="logOut()"
+        >
+          Log Out
+        </button>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="column" >
+        <h3>Personal todos</h3>
+        <form class="formInput" >
+          <input
+            id="personalpost"
+            class="input"
+            placeholder="What needs to be done?"
+      
+          /><i class="inputMarker fa fa-angle-right"></i>
+        </form>
+        <div class="todoListWrapper">
+            <div id="showfeedpersonal"></div>
+        </div>
+        <!-- <div class="footerList">
+          <span> 0 items</span>
+          <ul style="margin-left: 0%">
+            <li style="display: block"><a class="">All</a></li>
+            <li style="display: block"><a class="">Active</a></li>
+            <li style="display: block"><a class="selected">Completed</a></li>
+          </ul>
+          <button class="clearComp">Clear completed</button>
+        </div> -->
+      </div>
+      <div class="column">
+        <h3>Public feed (realtime)</h3>
+        <div class="formInput" >
+          <input
+            id="publicpost"
+            class="input"
+            placeholder="What needs to be done?"
+            
+          /><i class="inputMarker fa fa-angle-right"></i>
+        </div>
+
+        <div class="todoListWrapper">
+          <div class="">
+            <div id="newmessage"></div>
+            <div id="showfeedpublic"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color: #ebe6e6">
+        <h3>ONLINE USERS - 1</h3>
+        <div class="userInfo" id="app">
+          <div class="userImg"><i class="far fa-user"></i></div>
+          <div class="userName" v-for="items in parsedUser" :key="items">
+           {{items.username}} 
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="./FunctionLanding.js">
+    </script>
+  </body>
+</html>
