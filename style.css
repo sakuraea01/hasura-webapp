@@ -114,15 +114,22 @@ button, input {
 
 .boxcomment{
   height: 60px;
+  gap: 40px;
   display: flex;
-  gap: 10px;
   padding: 10px;
   border-bottom: 1px solid rgb(197, 197, 197);
 }
 
 .boxname{
+  padding-right: 0px;
   padding: 10px;
   background-color: aquamarine;
+  border-radius: 10%;
+}
+
+.boxdelete{
+  padding: 10px;
+  background-color: rgb(223, 30, 120);
   border-radius: 10%;
 }
 
@@ -134,4 +141,5 @@ button, input {
 .userImg{
   padding-right: 5px;
 }
+
 
